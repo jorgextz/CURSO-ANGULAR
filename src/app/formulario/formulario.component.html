@@ -1,0 +1,15 @@
+<input type="text" placeholder="Ingresa tu Nombre" class="form-control" #name>
+
+<button class="btn btn-primary mt-2" (click)="mostrar_en_consola(name.value)">Mostrar en Consola</button>
+
+
+<div class="alert alert-primary mt-4" *ngIf="openAlert; else mensaje" >
+    <p>Se ha enviado el Mensaje</p>
+    <button class="btn btn-danger" (click)="openAlert = false">Cerrar</button>
+</div>
+
+<ng-template #mensaje> 
+<div class="alert alert-primary mt-2">
+    Introduce un Nombre
+</div>
+</ng-template>
